@@ -33,6 +33,8 @@ public class RemoveProductFromCart extends BaseTest {
 
     @Test()
     public void TCO3_RemoveProductFromCart ()  {
+        RemoveCartPageObject removeCartPageObject = new RemoveCartPageObject();
+
         removeCartPageObject.openUrl("https://demowebshop.tricentis.com/");
         removeCartPageObject.verifyCurrentUrl();
         removeCartPageObject.addBookToCart(productName_1,"1");

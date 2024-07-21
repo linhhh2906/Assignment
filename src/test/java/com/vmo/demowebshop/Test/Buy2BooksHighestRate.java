@@ -18,7 +18,6 @@ import org.testng.annotations.*;
 public class Buy2BooksHighestRate extends BaseTest {
     WebDriver driver;
     private Buy2BooksHighestRatePageObject buy2BooksHighestRatePageObject;
-
     @Parameters("browser")
     @BeforeMethod
     public void setup(){
@@ -28,9 +27,11 @@ public class Buy2BooksHighestRate extends BaseTest {
 
     @Test()
     public void TCO2_Buy2BookHighestRating() {
-        buy2BooksHighestRatePageObject.openUrl("https://demowebshop.tricentis.com/");
-        buy2BooksHighestRatePageObject.verifyCurrentUrl("https://demowebshop.tricentis.com/");
-        buy2BooksHighestRatePageObject.verifyCurrentUrl("Demo Web Shop. Books");
+        Buy2BooksHighestRatePageObject buy2BooksHighestRatePageObject = new Buy2BooksHighestRatePageObject(driver);
+
+        buy2BooksHighestRatePageObject.openUrl(driver,"https://demowebshop.tricentis.com/");
+        buy2BooksHighestRatePageObject.verifyCurrentPage();
+        //buy2BooksHighestRatePageObject.verifyCurrentUrl();
         buy2BooksHighestRatePageObject.Select2ProductHighestRatings();
         buy2BooksHighestRatePageObject.hoverOnShoppingCart();
     }

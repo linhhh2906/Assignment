@@ -20,7 +20,9 @@ public class LoginPageObject extends BasePage {
         this.waitDriver = waitDriver;
 
     }
+    public LoginPageObject() {
 
+    }
     public void openUrl(String value) {
         openUrl(driver, value);
     }

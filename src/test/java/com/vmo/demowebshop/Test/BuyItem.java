@@ -32,34 +32,36 @@ public class BuyItem extends BaseTest {
 
     @Test()
     public void TC04_BuyItem() {
-        buyItem.openUrl("https://demowebshop.tricentis.com/");
-        buyItem.verifyTitle("Demo Web Shop");
-        buyItem.clickDigitalDownload();
-        buyItem.verifyTitle("Demo Web Shop. Digital downloads");
-        buyItem.clickBtnAddToCart();
-        buyItem.verifyMessageAlert();
-        buyItem.clickShoppingCart();
-        buyItem.verifyTitle("Demo Web Shop. Shopping Cart");
-        buyItem.clickCheckBoxTermOfService();
-        buyItem.clickCheckout();
-        buyItem.clickCheckoutAsGuest();
-        buyItem.fillInfoBillingAddress(DataUtil.getData().getFirstName(), DataUtil.getData().getLastName(), DataUtil.getData().getEmailAddress(), Country, dataUtil.getCityName(), DataUtil.getData().getFullAddress(), DataUtil.getData().getZipCode(), DataUtil.getData().getPhoneNumber());
-        buyItem.clickContinueCheckout();
-        buyItem.verifyPaymentMethodIsDisplayed();
-        buyItem.clickContinuePayment();
-        buyItem.verifyMessagePayByCOD();
-        buyItem.verifyName(DataUtil.getData().getFirstName().concat(DataUtil.getData().getLastName()));
-        buyItem.verifyEmail( DataUtil.getData().getEmailAddress());
-        buyItem.verifyPhone(DataUtil.getData().getPhoneNumber());
-        buyItem.verifyAddress(DataUtil.getData().getFullAddress());
+        BuyItemPageObject buyItemPageObject = new BuyItemPageObject();
+
+        buyItemPageObject.openUrl("https://demowebshop.tricentis.com/");
+        buyItemPageObject.verifyTitle("Demo Web Shop");
+        buyItemPageObject.clickDigitalDownload();
+        buyItemPageObject.verifyTitle("Demo Web Shop. Digital downloads");
+        buyItemPageObject.clickBtnAddToCart();
+        buyItemPageObject.verifyMessageAlert();
+        buyItemPageObject.clickShoppingCart();
+        buyItemPageObject.verifyTitle("Demo Web Shop. Shopping Cart");
+        buyItemPageObject.clickCheckBoxTermOfService();
+        buyItemPageObject.clickCheckout();
+        buyItemPageObject.clickCheckoutAsGuest();
+        buyItemPageObject.fillInfoBillingAddress(DataUtil.getData().getFirstName(), DataUtil.getData().getLastName(), DataUtil.getData().getEmailAddress(), Country, dataUtil.getCityName(), DataUtil.getData().getFullAddress(), DataUtil.getData().getZipCode(), DataUtil.getData().getPhoneNumber());
+        buyItemPageObject.clickContinueCheckout();
+        buyItemPageObject.verifyPaymentMethodIsDisplayed();
+        buyItemPageObject.clickContinuePayment();
+        buyItemPageObject.verifyMessagePayByCOD();
+        buyItemPageObject.verifyName(DataUtil.getData().getFirstName().concat(DataUtil.getData().getLastName()));
+        buyItemPageObject.verifyEmail( DataUtil.getData().getEmailAddress());
+        buyItemPageObject.verifyPhone(DataUtil.getData().getPhoneNumber());
+        buyItemPageObject.verifyAddress(DataUtil.getData().getFullAddress());
         String cityZipCodeInput = DataUtil.getData().getCityName() + ' '+ ','+' '+ DataUtil.getData().getZipCode();
-        buyItem.verifyCityZipCode(cityZipCodeInput);
-        buyItem.verifyCountry(Country);
-        buyItem.verifyPaymentMethod(paymentMethod);
+        buyItemPageObject.verifyCityZipCode(cityZipCodeInput);
+        buyItemPageObject.verifyCountry(Country);
+        buyItemPageObject.verifyPaymentMethod(paymentMethod);
         //buyItem.verifyTotal();
-        buyItem.clickConfirmPaymentMethod();
-        buyItem.verifyMessageCompleted();
-        buyItem.clickContinueCompleted();
+        buyItemPageObject.clickConfirmPaymentMethod();
+        buyItemPageObject.verifyMessageCompleted();
+        buyItemPageObject.clickContinueCompleted();
 
     }
 

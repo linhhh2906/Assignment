@@ -18,6 +18,10 @@ public class RemoveCartPageObject extends BasePage {
         this.waitDriver = waitDriver;
     }
 
+    public RemoveCartPageObject() {
+
+    }
+
     public void openUrl(String value) {
         openUrl(driver, value);
     }

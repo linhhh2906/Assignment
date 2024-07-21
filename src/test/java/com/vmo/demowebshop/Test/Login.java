@@ -39,13 +39,15 @@ public class Login extends BaseTest {
 
     @Test(dataProvider = "dataLogin")
     public void TC01_Login(String Status, String UserName, String PassWord, String ExpectedMessage) {
-        LoginPageObject.openUrl("https://demowebshop.tricentis.com/");
-        LoginPageObject.verifyTitle("Demo Web Shop");
-        LoginPageObject.clickBtnLogin();
-        LoginPageObject.verifyTitle("Demo Web Shop. Login");
-        LoginPageObject.inputEmail(UserName);
-        LoginPageObject.inputPassWord(PassWord);
-        LoginPageObject.clickBtnLogin();
+        LoginPageObject loginPageObject = new LoginPageObject();
+
+        loginPageObject.openUrl("https://demowebshop.tricentis.com/");
+        loginPageObject.verifyTitle("Demo Web Shop");
+        loginPageObject.clickBtnLogin();
+        loginPageObject.verifyTitle("Demo Web Shop. Login");
+        loginPageObject.inputEmail(UserName);
+        loginPageObject.inputPassWord(PassWord);
+        loginPageObject.clickBtnLogin();
 
     }
 

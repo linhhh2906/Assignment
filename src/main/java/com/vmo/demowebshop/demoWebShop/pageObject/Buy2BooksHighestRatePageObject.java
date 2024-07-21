@@ -21,13 +21,22 @@ public class Buy2BooksHighestRatePageObject extends BasePage {
         this.waitDriver = waitDriver;
     }
 
+    public Buy2BooksHighestRatePageObject() {
+
+    }
+
+    public Buy2BooksHighestRatePageObject(WebDriver driver) {
+        super();
+    }
+
     public void openUrl(String value) {
         openUrl(driver, value);
     }
 
-    public void verifyCurrentUrl(String url) {
+    public Buy2BooksHighestRatePageObject verifyCurrentPage() {
 
-        Assert.assertEquals(getCurrentUrl(driver), "https://demowebshop.tricentis.com/");
+        Assert.assertEquals(getTitle(driver), "Demo Web Shop");
+        return this;
     }
     public void Login() {
         clickToElement(driver, BookUI.BOOK_TAG);

@@ -17,6 +17,10 @@ public class BuyItemPageObject extends BasePage {
         this.waitDriver = waitDriver;
     }
 
+    public BuyItemPageObject() {
+
+    }
+
     public void openUrl( String value) {
         openUrl(driver, value);
     }
