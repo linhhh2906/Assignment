@@ -14,9 +14,12 @@ public class ExcelUtil {
     private FileInputStream fileIn;
     private FileOutputStream fileOut;
 
-    public ExcelUtil() {
+    public ExcelUtil(String src, String test, String resources, String assignment) {
+    }
+
+    public void ExcelUtil(String ExcelPath, String SheetName) {
         try {
-            File file = new File("");
+            File file = new File(ExcelPath);
             fileIn = new FileInputStream(file);
             wb = new XSSFWorkbook(fileIn);
         } catch (Exception e) {

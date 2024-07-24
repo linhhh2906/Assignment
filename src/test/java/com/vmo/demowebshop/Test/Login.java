@@ -22,7 +22,7 @@ public class Login extends BaseTest {
     private WebDriver driver;
     private LoginPageObject LoginPageObject;
 
-    ExcelUtil excelUtil = new ExcelUtil("C:/Users/linhn/Downloads/Assignment.xlsx");
+    ExcelUtil excelUtil = new ExcelUtil("src","test","resources","Assignment");
 
     @DataProvider(name = "dataLogin")
 
